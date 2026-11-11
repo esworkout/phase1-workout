@@ -1,0 +1,2367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Phase 1 Training Program</title>
+
+<style>
+
+:root{
+  --bg:#f4f7fb;
+  --white:#ffffff;
+  --navy:#12233d;
+  --blue:#2563eb;
+  --green:#16a34a;
+  --orange:#ea580c;
+  --border:#e2e8f0;
+  --muted:#64748b;
+  --shadow:0 10px 25px rgba(15,23,42,.08);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:var(--bg);
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  color:#111827;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:16px;
+}
+
+.hero{
+  background:
+  linear-gradient(
+  135deg,
+  #12233d,
+  #2563eb);
+
+  color:white;
+
+  padding:32px;
+
+  border-radius:24px;
+
+  margin-bottom:20px;
+
+  box-shadow:var(--shadow);
+}
+
+.hero h1{
+  margin-bottom:8px;
+}
+
+.hero p{
+  opacity:.85;
+}
+
+/* DAYS */
+
+.day{
+  background:white;
+  border-radius:20px;
+  overflow:hidden;
+  margin-bottom:20px;
+  box-shadow:var(--shadow);
+}
+
+.day summary{
+  list-style:none;
+  cursor:pointer;
+  padding:20px;
+  font-size:1.25rem;
+  font-weight:700;
+}
+
+.day summary::-webkit-details-marker{
+  display:none;
+}
+
+.day summary::after{
+  content:"⌄";
+  float:right;
+}
+
+.day[open] summary::after{
+  transform:rotate(180deg);
+}
+
+.content{
+  padding:20px;
+}
+
+/* BLOCKS */
+
+.block-section{
+  margin-bottom:18px;
+}
+
+.block-section summary{
+  cursor:pointer;
+  list-style:none;
+
+  background:#eff6ff;
+
+  color:#1d4ed8;
+
+  border:1px solid #bfdbfe;
+
+  border-radius:14px;
+
+  padding:16px;
+
+  font-weight:700;
+}
+
+.block-section summary::-webkit-details-marker{
+  display:none;
+}
+
+.block-section summary::after{
+  content:"+";
+  float:right;
+}
+
+.block-section[open] summary::after{
+  content:"−";
+}
+
+.block-content{
+  padding-top:14px;
+}
+
+/* ROUNDS */
+
+.round{
+  background:#f8fafc;
+
+  border:1px solid var(--border);
+
+  border-radius:18px;
+
+  padding:16px;
+
+  margin-bottom:16px;
+}
+
+.round h4{
+  color:var(--navy);
+  margin-bottom:14px;
+}
+
+/* EXERCISE CARDS */
+
+.exercise-card{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.exercise-content{
+    flex:1;
+}
+
+.exercise-name{
+    font-size:1rem;
+    font-weight:700;
+}
+
+.exercise-meta{
+    font-size:.9rem;
+    color:var(--muted);
+}
+
+.weight{
+    width:70px;
+    min-width:70px;
+
+    padding:8px;
+
+    border:1px solid var(--border);
+
+    border-radius:8px;
+
+    text-align:center;
+}
+
+/* TAGS */
+
+.hold{
+  display:inline-block;
+
+  margin-top:8px;
+
+  background:#dbeafe;
+
+  color:#1d4ed8;
+
+  padding:6px 12px;
+
+  border-radius:999px;
+
+  font-size:.8rem;
+
+  font-weight:600;
+}
+
+.equipment{
+  display:inline-block;
+
+  margin-top:8px;
+
+  background:#dcfce7;
+
+  color:#166534;
+
+  padding:6px 12px;
+
+  border-radius:999px;
+
+  font-size:.8rem;
+
+  font-weight:600;
+}
+
+.rest-period{
+
+  margin-top:12px;
+
+  background:#eff6ff;
+
+  border-left:4px solid var(--blue);
+
+  border-radius:12px;
+
+  padding:12px;
+
+  color:#1d4ed8;
+
+  font-weight:700;
+}
+
+.notes{
+
+  width:100%;
+
+  min-height:150px;
+
+  margin-top:20px;
+
+  border:1px solid var(--border);
+
+  border-radius:14px;
+
+  padding:14px;
+}
+
+@media(max-width:768px){
+
+  .container{
+    padding:10px;
+  }
+
+@media(max-width:768px){
+
+  .exercise-card{
+    flex-direction:row;
+    align-items:center;
+  }
+
+}
+
+  .exercise-card input[type="checkbox"]{
+    width:22px;
+    height:22px;
+  }
+
+  .weight{
+    width:70px;
+    min-width:70px;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="hero">
+<h1>Phase 1 Training Program</h1>
+<p>Week 1 Strength & Conditioning</p>
+</div>
+
+<details class="day" open>
+
+<summary>
+Day 1 • Lower Body + Core
+</summary>
+
+<div class="content">
+
+<!-- PREP -->
+
+<details class="block-section">
+<summary>Prep</summary>
+
+<div class="block-content">
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Bike</div>
+<div class="exercise-meta">5 Minutes</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Rear Foot Elevated Quadriceps Hip Flexor Stretch</div>
+<div class="exercise-meta">5 Repetitions Each Side</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Figure Four Alternating Stretch</div>
+<div class="exercise-meta">5 Repetitions</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">90 / 90 Arm Sweep</div>
+<div class="exercise-meta">5 Repetitions Each Side</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Plank With Alternating Reach</div>
+<div class="exercise-meta">5 Repetitions Each Side</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Deep Squat To Rotation</div>
+<div class="exercise-meta">5 Repetitions</div>
+</div>
+</div>
+
+</div>
+</details>
+
+<!-- BLOCK ONE -->
+
+<details class="block-section">
+<summary>Block One</summary>
+
+<div class="block-content">
+
+<div class="round">
+<h4>Round 1</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Goblet Squat</div>
+<div class="exercise-meta">5 Repetitions</div>
+</div>
+<input class="weight" placeholder="Weight">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Seated Lat Pulldown</div>
+<div class="exercise-meta">5 Repetitions</div>
+</div>
+<input class="weight" placeholder="Weight">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Deadbug Plus Crunch</div>
+<div class="exercise-meta">10 Repetitions</div>
+</div>
+</div>
+
+</div>
+
+<div class="round">
+<h4>Round 2</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Goblet Squat</div>
+<div class="exercise-meta">5 Repetitions</div>
+</div>
+<input class="weight" placeholder="Weight">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Seated Lat Pulldown</div>
+<div class="exercise-meta">5 Repetitions</div>
+</div>
+<input class="weight" placeholder="Weight">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Deadbug Plus Crunch</div>
+<div class="exercise-meta">10 Repetitions</div>
+</div>
+</div>
+
+</div>
+
+<div class="round">
+<h4>Round 3</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Goblet Squat</div>
+<div class="exercise-meta">5 Repetitions</div>
+</div>
+<input class="weight" placeholder="Weight">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Seated Lat Pulldown</div>
+<div class="exercise-meta">5 Repetitions</div>
+</div>
+<input class="weight" placeholder="Weight">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Deadbug Plus Crunch</div>
+<div class="exercise-meta">10 Repetitions</div>
+</div>
+</div>
+
+</div>
+
+</div>
+</details>
+
+<!-- BLOCK TWO -->
+
+<details class="block-section">
+<summary>Block Two</summary>
+
+<div class="block-content">
+
+<div class="round">
+<h4>Round 1</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Rear Foot Elevated Split Squat</div>
+<div class="exercise-meta">5 Repetitions Each Side</div>
+<div class="hold">Hold 20 Seconds</div>
+</div>
+<input class="weight" placeholder="Weight">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Bird Dog Row</div>
+<div class="exercise-meta">10 Repetitions Each Side</div>
+</div>
+<input class="weight" placeholder="Weight">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Quadruped Pull Through</div>
+<div class="exercise-meta">10 Repetitions Each Side</div>
+</div>
+<input class="weight" placeholder="Weight">
+</div>
+
+</div>
+
+<div class="round">
+<h4>Round 2</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Rear Foot Elevated Split Squat</div>
+<div class="exercise-meta">5 Repetitions Each Side</div>
+<div class="hold">Hold 20 Seconds</div>
+</div>
+<input class="weight" placeholder="Weight">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Bird Dog Row</div>
+<div class="exercise-meta">10 Repetitions Each Side</div>
+</div>
+<input class="weight" placeholder="Weight">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Quadruped Pull Through</div>
+<div class="exercise-meta">10 Repetitions Each Side</div>
+</div>
+<input class="weight" placeholder="Weight">
+</div>
+
+</div>
+
+<div class="round">
+<h4>Round 3</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Rear Foot Elevated Split Squat</div>
+<div class="exercise-meta">5 Repetitions Each Side</div>
+<div class="hold">Hold 20 Seconds</div>
+</div>
+<input class="weight" placeholder="Weight">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Bird Dog Row</div>
+<div class="exercise-meta">10 Repetitions Each Side</div>
+</div>
+<input class="weight" placeholder="Weight">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Quadruped Pull Through</div>
+<div class="exercise-meta">10 Repetitions Each Side</div>
+</div>
+<input class="weight" placeholder="Weight">
+</div>
+
+</div>
+
+</div>
+</details>
+
+<!-- BLOCK THREE -->
+
+<details class="block-section">
+<summary>Block Three</summary>
+
+<div class="block-content">
+
+<div class="round">
+<h4>Round 1</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Lateral Lunge</div>
+<div class="exercise-meta">10 Repetitions Each Side</div>
+</div>
+<input class="weight" placeholder="Weight">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Plank With Adduction</div>
+<div class="exercise-meta">10 Repetitions Each Side</div>
+<div class="equipment">Light Resistance Band</div>
+</div>
+</div>
+
+</div>
+
+<div class="round">
+<h4>Round 2</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Lateral Lunge</div>
+<div class="exercise-meta">10 Repetitions Each Side</div>
+</div>
+<input class="weight" placeholder="Weight">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Plank With Adduction</div>
+<div class="exercise-meta">10 Repetitions Each Side</div>
+<div class="equipment">Light Resistance Band</div>
+</div>
+</div>
+
+</div>
+
+<div class="round">
+<h4>Round 3</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Lateral Lunge</div>
+<div class="exercise-meta">10 Repetitions Each Side</div>
+</div>
+<input class="weight" placeholder="Weight">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Plank With Adduction</div>
+<div class="exercise-meta">10 Repetitions Each Side</div>
+<div class="equipment">Light Resistance Band</div>
+</div>
+</div>
+
+</div>
+
+</div>
+</details>
+
+<!-- CONDITIONING -->
+
+<details class="block-section">
+<summary>Conditioning</summary>
+
+<div class="block-content">
+
+<div class="exercise-card">
+<input type="checkbox">
+
+<div class="exercise-content">
+<div class="exercise-name">Stairclimber</div>
+<div class="exercise-meta">10 Repetitions</div>
+</div>
+
+</div>
+
+<div class="rest-period">
+Work 1 Minute • Rest 30 Seconds
+</div>
+
+</div>
+
+</details>
+
+<textarea
+class="notes"
+placeholder="Workout Notes"></textarea>
+
+</div>
+
+</details>
+
+<details class="day">
+
+<summary>
+Day 2 • Upper Body + Conditioning
+</summary>
+
+<div class="content">
+
+<!-- PREP -->
+
+<details class="block-section">
+<summary>Prep</summary>
+
+<div class="block-content">
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Rower</div>
+<div class="exercise-meta">500 Meters</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Bretzel Stretch</div>
+<div class="exercise-meta">5 Repetitions</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">World's Greatest Stretch</div>
+<div class="exercise-meta">3 Repetitions Each Side</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Scapular Push Up</div>
+<div class="exercise-meta">10 Repetitions</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Prone Swimmers</div>
+<div class="exercise-meta">10 Repetitions</div>
+</div>
+</div>
+
+</div>
+
+</details>
+
+<!-- BLOCK ONE -->
+
+<details class="block-section">
+<summary>Block One</summary>
+
+<div class="block-content">
+
+<div class="round">
+
+<h4>Round 1</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Dumbbell Bench Press</div>
+<div class="exercise-meta">15 Pounds • 5 Repetitions</div>
+</div>
+<input class="weight" placeholder="15">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Eccentric Leg Curl On Stability Ball</div>
+<div class="exercise-meta">5 Repetitions</div>
+<div class="hold">Lower Slowly For 5 Seconds</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Stability Ball Rollout</div>
+<div class="exercise-meta">10 Repetitions</div>
+</div>
+</div>
+
+</div>
+
+<div class="round">
+
+<h4>Round 2</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Dumbbell Bench Press</div>
+<div class="exercise-meta">15 Pounds • 5 Repetitions</div>
+</div>
+<input class="weight" placeholder="15">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Eccentric Leg Curl On Stability Ball</div>
+<div class="exercise-meta">5 Repetitions</div>
+<div class="hold">Lower Slowly For 5 Seconds</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Stability Ball Rollout</div>
+<div class="exercise-meta">10 Repetitions</div>
+</div>
+</div>
+
+</div>
+
+<div class="round">
+
+<h4>Round 3</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Dumbbell Bench Press</div>
+<div class="exercise-meta">15 Pounds • 5 Repetitions</div>
+</div>
+<input class="weight" placeholder="15">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Eccentric Leg Curl On Stability Ball</div>
+<div class="exercise-meta">5 Repetitions</div>
+<div class="hold">Lower Slowly For 5 Seconds</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Stability Ball Rollout</div>
+<div class="exercise-meta">10 Repetitions</div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</details>
+
+<!-- BLOCK TWO -->
+
+<details class="block-section">
+<summary>Block Two</summary>
+
+<div class="block-content">
+
+<div class="round">
+
+<h4>Round 1</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Single Leg Romanian Deadlift</div>
+<div class="exercise-meta">15 Pounds • 5 Repetitions Each Side</div>
+</div>
+<input class="weight" placeholder="15">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Eccentric Push Up</div>
+<div class="exercise-meta">5 Repetitions</div>
+<div class="hold">Lower Slowly For 5 Seconds</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Straight Arm Straight Leg Sit Up</div>
+<div class="exercise-meta">10 Repetitions</div>
+</div>
+</div>
+
+</div>
+
+<div class="round">
+
+<h4>Round 2</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Single Leg Romanian Deadlift</div>
+<div class="exercise-meta">15 Pounds • 5 Repetitions Each Side</div>
+</div>
+<input class="weight" placeholder="15">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Eccentric Push Up</div>
+<div class="exercise-meta">5 Repetitions</div>
+<div class="hold">Lower Slowly For 5 Seconds</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Straight Arm Straight Leg Sit Up</div>
+<div class="exercise-meta">10 Repetitions</div>
+</div>
+</div>
+
+</div>
+
+<div class="round">
+
+<h4>Round 3</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Single Leg Romanian Deadlift</div>
+<div class="exercise-meta">15 Pounds • 5 Repetitions Each Side</div>
+</div>
+<input class="weight" placeholder="15">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Eccentric Push Up</div>
+<div class="exercise-meta">5 Repetitions</div>
+<div class="hold">Lower Slowly For 5 Seconds</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Straight Arm Straight Leg Sit Up</div>
+<div class="exercise-meta">10 Repetitions</div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</details>
+
+<!-- AMRAP -->
+
+<details class="block-section">
+<summary>AMRAP</summary>
+
+<div class="block-content">
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Kettlebell Swing</div>
+<div class="exercise-meta">10 Repetitions</div>
+</div>
+<input class="weight" placeholder="Weight">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">High To Low Plank</div>
+<div class="exercise-meta">10 Repetitions</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Ground To Press</div>
+<div class="exercise-meta">10 Repetitions</div>
+</div>
+<input class="weight" placeholder="Weight">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Rower</div>
+<div class="exercise-meta">200 Meters</div>
+</div>
+</div>
+
+</div>
+
+</details>
+
+<!-- DUMBBELL COMPLEX -->
+
+<details class="block-section">
+<summary>Dumbbell Complex</summary>
+
+<div class="block-content">
+
+<div class="round">
+
+<h4>Round 1</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Bent Over Row</div>
+<div class="exercise-meta">15 Pounds • 8 Repetitions</div>
+</div>
+<input class="weight" placeholder="Weight">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Romanian Deadlift</div>
+<div class="exercise-meta">15 Pounds • 8 Repetitions</div>
+</div>
+<input class="weight" placeholder="Weight">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Reverse Lunge</div>
+<div class="exercise-meta">15 Pounds • 8 Repetitions Each Side</div>
+</div>
+<input class="weight" placeholder="Weight">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Front Squat</div>
+<div class="exercise-meta">15 Pounds • 8 Repetitions</div>
+</div>
+<input class="weight" placeholder="Weight">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Continuous Jump Squat</div>
+<div class="exercise-meta">15 Pounds • 8 Repetitions</div>
+</div>
+<input class="weight" placeholder="Weight">
+</div>
+
+<div class="rest-period">
+Rest 1 Minute
+</div>
+
+</div>
+
+<div class="round">
+
+<h4>Round 2</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Bent Over Row</div>
+<div class="exercise-meta">7.5 Pounds • 8 Repetitions</div>
+</div>
+<input class="weight" placeholder="Weight">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Romanian Deadlift</div>
+<div class="exercise-meta">7.5 Pounds • 8 Repetitions</div>
+</div>
+<input class="weight" placeholder="Weight">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Reverse Lunge</div>
+<div class="exercise-meta">7.5 Pounds • 8 Repetitions Each Side</div>
+</div>
+<input class="weight" placeholder="Weight">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Front Squat</div>
+<div class="exercise-meta">7.5 Pounds • 8 Repetitions</div>
+</div>
+<input class="weight" placeholder="Weight">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Continuous Jump Squat</div>
+<div class="exercise-meta">7.5 Pounds • 8 Repetitions</div>
+</div>
+<input class="weight" placeholder="Weight">
+</div>
+
+<div class="rest-period">
+Rest 1 Minute
+</div>
+
+</div>
+
+</div>
+
+</details>
+
+<textarea class="notes" placeholder="Workout Notes"></textarea>
+
+</div>
+
+</details>
+
+<details class="day">
+
+<summary>
+Day 3 • Recovery + Conditioning
+</summary>
+
+<div class="content">
+
+<!-- PREP -->
+
+<details class="block-section">
+<summary>Prep</summary>
+
+<div class="block-content">
+
+<div class="exercise-card">
+<input type="checkbox">
+
+<div class="exercise-content">
+<div class="exercise-name">Bike</div>
+<div class="exercise-meta">10 Minutes</div>
+</div>
+
+</div>
+
+</div>
+
+</details>
+
+<!-- SLED PUSH -->
+
+<details class="block-section">
+<summary>Sled Push</summary>
+
+<div class="block-content">
+
+<div class="round">
+
+<h4>Work Set</h4>
+
+<div class="exercise-card">
+
+<input type="checkbox">
+
+<div class="exercise-content">
+
+<div class="exercise-name">
+Sled Push
+</div>
+
+<div class="exercise-meta">
+45 Pounds • 10 Repetitions
+</div>
+
+</div>
+
+<input
+class="weight"
+placeholder="45">
+
+</div>
+
+<div class="rest-period">
+Work For 1 Minute
+</div>
+
+<div class="rest-period">
+Rest For 30 Seconds
+</div>
+
+</div>
+
+</div>
+
+</details>
+
+<!-- CARDIO FINISHER -->
+
+<details class="block-section">
+<summary>Cardio Finisher</summary>
+
+<div class="block-content">
+
+<div class="exercise-card">
+
+<input type="checkbox">
+
+<div class="exercise-content">
+
+<div class="exercise-name">
+Elliptical
+</div>
+
+<div class="exercise-meta">
+20 Minutes Continuous
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</details>
+
+<textarea
+class="notes"
+placeholder="Workout Notes"></textarea>
+
+</div>
+
+</details>
+
+<details class="day">
+
+<summary>
+Day 4 • Full Body Strength
+</summary>
+
+<div class="content">
+
+<!-- PREP -->
+
+<details class="block-section">
+<summary>Prep</summary>
+
+<div class="block-content">
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Bike</div>
+<div class="exercise-meta">5 Minutes</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Rear Foot Elevated Quadriceps Hip Flexor Stretch</div>
+<div class="exercise-meta">5 Repetitions Each Side</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Figure Four Alternating Stretch</div>
+<div class="exercise-meta">5 Repetitions</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">90 / 90 Arm Sweep</div>
+<div class="exercise-meta">5 Repetitions Each Side</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Plank With Alternating Reach</div>
+<div class="exercise-meta">5 Repetitions Each Side</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Deep Squat To Rotation</div>
+<div class="exercise-meta">25 Pounds • 5 Repetitions</div>
+</div>
+<input class="weight" placeholder="25">
+</div>
+
+</div>
+
+</details>
+
+<!-- BLOCK ONE -->
+
+<details class="block-section">
+<summary>Block One</summary>
+
+<div class="block-content">
+
+<div class="round">
+
+<h4>Round 1</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Reverse Lunge</div>
+<div class="exercise-meta">20 Pounds • 10 Repetitions Each Side</div>
+</div>
+<input class="weight" placeholder="20">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Bench Plank Row</div>
+<div class="exercise-meta">12 Pounds • 10 Repetitions</div>
+</div>
+<input class="weight" placeholder="12">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Turkish Sit Up</div>
+<div class="exercise-meta">20 Pounds • 10 Repetitions</div>
+</div>
+<input class="weight" placeholder="20">
+</div>
+
+</div>
+
+<div class="round">
+
+<h4>Round 2</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Reverse Lunge</div>
+<div class="exercise-meta">20 Pounds • 10 Repetitions Each Side</div>
+</div>
+<input class="weight" placeholder="20">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Bench Plank Row</div>
+<div class="exercise-meta">12 Pounds • 10 Repetitions</div>
+</div>
+<input class="weight" placeholder="12">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Turkish Sit Up</div>
+<div class="exercise-meta">20 Pounds • 10 Repetitions</div>
+</div>
+<input class="weight" placeholder="20">
+</div>
+
+</div>
+
+<div class="round">
+
+<h4>Round 3</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Reverse Lunge</div>
+<div class="exercise-meta">20 Pounds • 10 Repetitions Each Side</div>
+</div>
+<input class="weight" placeholder="20">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Bench Plank Row</div>
+<div class="exercise-meta">12 Pounds • 10 Repetitions</div>
+</div>
+<input class="weight" placeholder="12">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Turkish Sit Up</div>
+<div class="exercise-meta">20 Pounds • 10 Repetitions</div>
+</div>
+<input class="weight" placeholder="20">
+</div>
+
+</div>
+
+</div>
+
+</details>
+
+<!-- BLOCK TWO -->
+
+<details class="block-section">
+<summary>Block Two</summary>
+
+<div class="block-content">
+
+<div class="round">
+
+<h4>Round 1</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Goblet Squat</div>
+<div class="exercise-meta">25 Pounds</div>
+<div class="hold">Hold Squat Position For 20 Seconds</div>
+</div>
+<input class="weight" placeholder="25">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Seated Single Arm Pulldown</div>
+<div class="exercise-meta">80 Pounds • 5 Repetitions Each Side</div>
+<div class="hold">Lower Slowly For 5 Seconds</div>
+</div>
+<input class="weight" placeholder="80">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Plank With Pulldown</div>
+<div class="exercise-meta">10 Repetitions Each Side</div>
+</div>
+</div>
+
+</div>
+
+<div class="round">
+
+<h4>Round 2</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Goblet Squat</div>
+<div class="exercise-meta">25 Pounds</div>
+<div class="hold">Hold Squat Position For 20 Seconds</div>
+</div>
+<input class="weight" placeholder="25">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Seated Single Arm Pulldown</div>
+<div class="exercise-meta">90 Pounds • 5 Repetitions Each Side</div>
+<div class="hold">Lower Slowly For 5 Seconds</div>
+</div>
+<input class="weight" placeholder="90">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Plank With Pulldown</div>
+<div class="exercise-meta">10 Repetitions Each Side</div>
+</div>
+</div>
+
+</div>
+
+<div class="round">
+
+<h4>Round 3</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Goblet Squat</div>
+<div class="exercise-meta">25 Pounds</div>
+<div class="hold">Hold Squat Position For 20 Seconds</div>
+</div>
+<input class="weight" placeholder="25">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Seated Single Arm Pulldown</div>
+<div class="exercise-meta">90 Pounds • 5 Repetitions Each Side</div>
+<div class="hold">Lower Slowly For 5 Seconds</div>
+</div>
+<input class="weight" placeholder="90">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Plank With Pulldown</div>
+<div class="exercise-meta">10 Repetitions Each Side</div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</details>
+
+<!-- AMRAP -->
+
+<details class="block-section">
+<summary>AMRAP</summary>
+
+<div class="block-content">
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Squat To Press</div>
+<div class="exercise-meta">20 Pounds • 10 Repetitions</div>
+</div>
+<input class="weight" placeholder="20">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Plank Row</div>
+<div class="exercise-meta">15 Pounds • 10 Repetitions Each Side</div>
+</div>
+<input class="weight" placeholder="15">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Deadbug With Diagonal Push</div>
+<div class="exercise-meta">5 Repetitions Each Side</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Battle Rope Slam</div>
+<div class="exercise-meta">20 Repetitions</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Bear Crawl Forward</div>
+<div class="exercise-meta">10 Yards</div>
+</div>
+</div>
+
+</div>
+
+</details>
+
+<!-- CONDITIONING -->
+
+<details class="block-section">
+<summary>Conditioning</summary>
+
+<div class="block-content">
+
+<div class="round">
+
+<h4>Round 1</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Continuous Jump Squat</div>
+<div class="exercise-meta">15 Repetitions</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Farmer's Walk</div>
+<div class="exercise-meta">25 Pounds • 40 Yards</div>
+</div>
+<input class="weight" placeholder="25">
+</div>
+
+</div>
+
+<div class="round">
+
+<h4>Round 2</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Continuous Jump Squat</div>
+<div class="exercise-meta">15 Repetitions</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Farmer's Walk</div>
+<div class="exercise-meta">25 Pounds • 40 Yards</div>
+</div>
+<input class="weight" placeholder="25">
+</div>
+
+</div>
+
+<div class="round">
+
+<h4>Round 3</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Continuous Jump Squat</div>
+<div class="exercise-meta">15 Repetitions</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Farmer's Walk</div>
+<div class="exercise-meta">25 Pounds • 40 Yards</div>
+</div>
+<input class="weight" placeholder="25">
+</div>
+
+</div>
+
+<div class="round">
+
+<h4>Round 4</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Continuous Jump Squat</div>
+<div class="exercise-meta">15 Repetitions</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Farmer's Walk</div>
+<div class="exercise-meta">25 Pounds • 40 Yards</div>
+</div>
+<input class="weight" placeholder="25">
+</div>
+
+</div>
+
+</div>
+
+</details>
+
+<textarea
+class="notes"
+placeholder="Workout Notes"></textarea>
+
+</div>
+
+</details>
+
+<details class="day">
+
+<summary>
+Day 5 • Posterior Chain + Core
+</summary>
+
+<div class="content">
+
+<!-- PREP -->
+
+<details class="block-section">
+<summary>Prep</summary>
+
+<div class="block-content">
+
+<div class="exercise-card">
+<input type="checkbox">
+
+<div class="exercise-content">
+<div class="exercise-name">Rower</div>
+<div class="exercise-meta">500 Meters</div>
+</div>
+
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+
+<div class="exercise-content">
+<div class="exercise-name">Bretzel Stretch</div>
+<div class="exercise-meta">5 Repetitions</div>
+</div>
+
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+
+<div class="exercise-content">
+<div class="exercise-name">World's Greatest Stretch</div>
+<div class="exercise-meta">3 Repetitions Each Side</div>
+</div>
+
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+
+<div class="exercise-content">
+<div class="exercise-name">Scapular Push Up</div>
+<div class="exercise-meta">10 Repetitions</div>
+</div>
+
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+
+<div class="exercise-content">
+<div class="exercise-name">Prone Swimmers</div>
+<div class="exercise-meta">10 Repetitions</div>
+</div>
+
+</div>
+
+</div>
+
+</details>
+
+<!-- BLOCK ONE -->
+
+<details class="block-section">
+<summary>Block One</summary>
+
+<div class="block-content">
+
+<div class="round">
+
+<h4>Round 1</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+
+<div class="exercise-content">
+<div class="exercise-name">Romanian Deadlift</div>
+<div class="exercise-meta">30 Pounds • 5 Repetitions</div>
+</div>
+<input class="weight" placeholder="30">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+
+<div class="exercise-content">
+<div class="exercise-name">Push Up Isometric Hold</div>
+<div class="exercise-meta">Isometric Hold</div>
+<div class="hold">Hold For 20 Seconds</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+
+<div class="exercise-content">
+<div class="exercise-name">Rack Hold</div>
+<div class="exercise-meta">25 Pounds</div>
+<div class="hold">Hold For 30 Seconds</div>
+</div>
+<input class="weight" placeholder="25">
+</div>
+
+</div>
+
+<div class="round">
+
+<h4>Round 2</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+
+<div class="exercise-content">
+<div class="exercise-name">Romanian Deadlift</div>
+<div class="exercise-meta">30 Pounds • 5 Repetitions</div>
+</div>
+<input class="weight" placeholder="30">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+
+<div class="exercise-content">
+<div class="exercise-name">Push Up Isometric Hold</div>
+<div class="hold">Hold For 20 Seconds</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+
+<div class="exercise-content">
+<div class="exercise-name">Rack Hold</div>
+<div class="exercise-meta">25 Pounds</div>
+<div class="hold">Hold For 30 Seconds</div>
+</div>
+<input class="weight" placeholder="25">
+</div>
+
+</div>
+
+<div class="round">
+
+<h4>Round 3</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+
+<div class="exercise-content">
+<div class="exercise-name">Romanian Deadlift</div>
+<div class="exercise-meta">30 Pounds • 5 Repetitions</div>
+</div>
+<input class="weight" placeholder="30">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+
+<div class="exercise-content">
+<div class="exercise-name">Push Up Isometric Hold</div>
+<div class="hold">Hold For 20 Seconds</div>
+</div>
+
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+
+<div class="exercise-content">
+<div class="exercise-name">Rack Hold</div>
+<div class="exercise-meta">25 Pounds</div>
+<div class="hold">Hold For 30 Seconds</div>
+</div>
+<input class="weight" placeholder="25">
+</div>
+
+</div>
+
+</div>
+
+</details>
+
+<!-- BLOCK TWO -->
+
+<details class="block-section">
+<summary>Block Two</summary>
+
+<div class="block-content">
+
+<div class="round">
+
+<h4>Round 1</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+
+<div class="exercise-content">
+<div class="exercise-name">Single Leg Glute Bridge With Shoulders On Bench</div>
+<div class="exercise-meta">10 Repetitions Each Side</div>
+<div class="hold">Pause For 3 Seconds On Every Repetition</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+
+<div class="exercise-content">
+<div class="exercise-name">Half Kneeling Overhead Press</div>
+<div class="exercise-meta">15 Pounds • 10 Repetitions</div>
+</div>
+<input class="weight" placeholder="15">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+
+<div class="exercise-content">
+<div class="exercise-name">Off Bench Oblique Isometric Hold</div>
+<div class="hold">Hold For 20 Seconds</div>
+</div>
+</div>
+
+</div>
+
+<div class="round">
+
+<h4>Round 2</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+
+<div class="exercise-content">
+<div class="exercise-name">Single Leg Glute Bridge With Shoulders On Bench</div>
+<div class="exercise-meta">10 Repetitions Each Side</div>
+<div class="hold">Pause For 3 Seconds On Every Repetition</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+
+<div class="exercise-content">
+<div class="exercise-name">Half Kneeling Overhead Press</div>
+<div class="exercise-meta">15 Pounds • 10 Repetitions</div>
+</div>
+<input class="weight" placeholder="15">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+
+<div class="exercise-content">
+<div class="exercise-name">Off Bench Oblique Isometric Hold</div>
+<div class="hold">Hold For 20 Seconds</div>
+</div>
+
+</div>
+
+</div>
+
+<div class="round">
+
+<h4>Round 3</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+
+<div class="exercise-content">
+<div class="exercise-name">Single Leg Glute Bridge With Shoulders On Bench</div>
+<div class="exercise-meta">10 Repetitions Each Side</div>
+<div class="hold">Pause For 3 Seconds On Every Repetition</div>
+</div>
+
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+
+<div class="exercise-content">
+<div class="exercise-name">Half Kneeling Overhead Press</div>
+<div class="exercise-meta">15 Pounds • 10 Repetitions</div>
+</div>
+<input class="weight" placeholder="15">
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+
+<div class="exercise-content">
+<div class="exercise-name">Off Bench Oblique Isometric Hold</div>
+<div class="hold">Hold For 20 Seconds</div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</details>
+
+<!-- ABDOMINAL CIRCUIT -->
+
+<details class="block-section">
+<summary>Abdominal Circuit</summary>
+
+<div class="block-content">
+
+<div class="round">
+
+<h4>Round 1</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Sprinter Sit Up</div>
+<div class="exercise-meta">10 Repetitions Each Side</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Bicycle Crunch</div>
+<div class="exercise-meta">10 Repetitions Each Side</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Supine Oblique Reach</div>
+<div class="exercise-meta">10 Repetitions Each Side</div>
+</div>
+</div>
+
+<div class="rest-period">
+Rest 1 Minute
+</div>
+
+</div>
+
+<div class="round">
+
+<h4>Round 2</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Sprinter Sit Up</div>
+<div class="exercise-meta">10 Repetitions Each Side</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Bicycle Crunch</div>
+<div class="exercise-meta">10 Repetitions Each Side</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Supine Oblique Reach</div>
+<div class="exercise-meta">10 Repetitions Each Side</div>
+</div>
+</div>
+
+<div class="rest-period">
+Rest 1 Minute
+</div>
+
+</div>
+
+<div class="round">
+
+<h4>Round 3</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Sprinter Sit Up</div>
+<div class="exercise-meta">10 Repetitions Each Side</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Bicycle Crunch</div>
+<div class="exercise-meta">10 Repetitions Each Side</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Supine Oblique Reach</div>
+<div class="exercise-meta">10 Repetitions Each Side</div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</details>
+
+<!-- CONDITIONING -->
+
+<details class="block-section">
+<summary>Conditioning</summary>
+
+<div class="block-content">
+
+<div class="round">
+
+<h4>Round 1</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Reverse Lunge</div>
+<div class="exercise-meta">10 Repetitions Each Side</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Step Up</div>
+<div class="exercise-meta">10 Repetitions Each Side</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Squat</div>
+<div class="exercise-meta">20 Repetitions</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Jump Squat</div>
+<div class="exercise-meta">10 Repetitions</div>
+</div>
+</div>
+
+<div class="rest-period">
+Rest 1 Minute
+</div>
+
+</div>
+
+<div class="round">
+
+<h4>Round 2</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Reverse Lunge</div>
+<div class="exercise-meta">10 Repetitions Each Side</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Step Up</div>
+<div class="exercise-meta">10 Repetitions Each Side</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Squat</div>
+<div class="exercise-meta">20 Repetitions</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Jump Squat</div>
+<div class="exercise-meta">10 Repetitions</div>
+</div>
+</div>
+
+<div class="rest-period">
+Rest 1 Minute
+</div>
+
+</div>
+
+<div class="round">
+
+<h4>Round 3</h4>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Reverse Lunge</div>
+<div class="exercise-meta">10 Repetitions Each Side</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Step Up</div>
+<div class="exercise-meta">10 Repetitions Each Side</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Squat</div>
+<div class="exercise-meta">20 Repetitions</div>
+</div>
+</div>
+
+<div class="exercise-card">
+<input type="checkbox">
+<div class="exercise-content">
+<div class="exercise-name">Jump Squat</div>
+<div class="exercise-meta">10 Repetitions</div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</details>
+
+<textarea
+class="notes"
+placeholder="Workout Notes"></textarea>
+
+</div>
+
+</details>
+
+</div>
+<script>
+(function () {
+  const STORAGE_KEY = 'phase1-workout-data-v1';
+
+  function getData() {
+    try {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+    } catch {
+      return {};
+    }
+  }
+
+  function saveData(data) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+  }
+
+  const data = getData();
+
+  document
+    .querySelectorAll('input[type="checkbox"]')
+    .forEach((el, index) => {
+      const key = `checkbox-${index}`;
+
+      if (data[key] !== undefined) {
+        el.checked = data[key];
+      }
+
+      el.addEventListener('change', () => {
+        const current = getData();
+        current[key] = el.checked;
+        saveData(current);
+      });
+    });
+
+  document
+    .querySelectorAll('input.weight')
+    .forEach((el, index) => {
+      const key = `weight-${index}`;
+
+      if (data[key] !== undefined) {
+        el.value = data[key];
+      }
+
+      el.addEventListener('input', () => {
+        const current = getData();
+        current[key] = el.value;
+        saveData(current);
+      });
+    });
+
+  document
+    .querySelectorAll('textarea.notes')
+    .forEach((el, index) => {
+      const key = `notes-${index}`;
+
+      if (data[key] !== undefined) {
+        el.value = data[key];
+      }
+
+      el.addEventListener('input', () => {
+        const current = getData();
+        current[key] = el.value;
+        saveData(current);
+      });
+    });
+
+  document
+    .querySelectorAll('details')
+    .forEach((el, index) => {
+      const key = `details-${index}`;
+
+      if (data[key] !== undefined) {
+        el.open = data[key];
+      }
+
+      el.addEventListener('toggle', () => {
+        const current = getData();
+        current[key] = el.open;
+        saveData(current);
+      });
+    });
+
+  window.addEventListener('pagehide', () => {
+    saveData(getData());
+  });
+
+  window.addEventListener('beforeunload', () => {
+    saveData(getData());
+  });
+})();
+</script>
+</body>
+</html>
